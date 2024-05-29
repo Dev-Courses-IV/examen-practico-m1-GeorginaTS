@@ -21,6 +21,10 @@ const showStudents = () => {
   for (item of items) {
     item.remove();
   }
+  const articlesOld = document.querySelectorAll("article");
+  for (article of articlesOld) {
+    article.remove();
+  }
   let i = 0;
   for (student of students) {
     i++;
