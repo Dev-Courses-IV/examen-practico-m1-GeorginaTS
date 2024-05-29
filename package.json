@@ -1,0 +1,27 @@
+{
+  "name": "Examen práctico",
+  "version": "1.0.0",
+  "description": "Examen práctico módulo 1",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irenevg18/DOM-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irenevg18/DOM-/issues"
+  },
+  "homepage": "https://github.com/irenevg18/DOM-#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
