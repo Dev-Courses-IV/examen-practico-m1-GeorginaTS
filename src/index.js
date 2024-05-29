@@ -23,7 +23,7 @@ const showStudents = () => {
   for (student of students) {
     const liStudent = document.createElement("li");
     //liStudent.innerText = `${student.name} - ${student.age} -${student.email} `;
-    liStudent.innerHTML = `<article class="border border-lime-700 rounded-md bg-lime-300 p-2"><h4 class="font-bold"> ${student.name} <span class="text-white">${student.age}</span></h4><p class="bg-lime-200 text-center">${student.email}</p></article>`
+    liStudent.innerHTML = `<article class="border border-lime-700 rounded-md bg-lime-300 p-2"><h4 class="font-bold"> ${student.name} <span class="text-white">${student.age}</span></h4><a href ="mailto: ${student.email}" class="bg-lime-200 text-center italic text-xs">${student.email}</a></article>`
     studentsList.appendChild(liStudent)
   }
 }
