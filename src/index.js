@@ -15,6 +15,7 @@ const students = [
   { name: "Constanza", age: 28, email: "constanza@email.com" },
 ];
 
+
 const showStudents = () => {
   const studentsList = document.getElementById("studentsList");
   const items = document.querySelectorAll("li");
@@ -56,7 +57,7 @@ const showStudents = () => {
   approvedArea.addEventListener("drop", (event) => {
     const idItem = event.dataTransfer.getData("id");
     const item = document.getElementById(idItem);
-    item.classList.add("bg-lime-200");
+    item.classList.add("bg-lime-100");
     approvedArea.appendChild(item);
   });
 

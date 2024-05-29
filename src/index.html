@@ -20,16 +20,17 @@
     >
       Clean List students
     </button>
-    <div class="flex w-full bg-slate-200 border border-lime-700">
-      <section id="approved" class="w-[50%]">
-        <h3 class="bg-lime-400 font-bold">Approved</h3>
-        <div class="dropArea h-96 bg-lime-300" id="approvedArea"></div>
+    <div class="w-full border-lime-700 p-4 min-h-96 flex gap-4 justify-center m-10">
+      <section id="approved" class="rounded-lg bg-lime-400 min-w-[40%] max-w-0.5">
+        <h3 class=" font-bold p-2">Approved</h3>
+        <div class="dropArea h-full bg-lime-300 grid grid-cols-2 gap-2 p-2 rounded-lg" id="approvedArea"></div>
       </section>
-      <section id="suspended" class="w-[50%]">
-        <h3 class="bg-red-500 font-bold">Suspended</h3>
-        <div class="dropArea h-96 bg-red-400" id="suspendedArea"></div>
+      <section id="suspended" class="rounded-lg bg-red-500 min-w-[40%]">
+        <h3 class=" font-bold p-2">Suspended</h3>
+        <div class="dropArea h-full bg-red-400 grid grid-cols-2 p-2 rounded-lg" id="suspendedArea"></div>
       </section>
     </div>
+    <footer class="p-2 mt-16 bg-slate-500">Examen Mòdul 1. Georgina.  Maig 2024</footer>
     <script src="index.js"></script>
   </body>
 </html>
