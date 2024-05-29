@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
-</head>
-<body class="p-2">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="p-2">
     <h1 class="text-3xl font-bold underline">Students list</h1>
     <ul id="studentsList" class="grid grid-cols-4 gap-4 m-10"></ul>
     <button
@@ -14,6 +14,22 @@
     >
       Print students
     </button>
-  <script src="index.js"></script>
-</body>
+    <button
+      class="bg-lime-800 hover:bg-lime-700 px-4 py-1 rounded-lg text-white"
+      id="cleanButton"
+    >
+      Clean List students
+    </button>
+    <div class="flex w-full bg-slate-200 border border-lime-700">
+      <section id="approved" class="w-[50%]">
+        <h3 class="bg-lime-400 font-bold">Approved</h3>
+        <div class="dropArea h-96 bg-lime-300" id="approvedArea"></div>
+      </section>
+      <section id="suspended" class="w-[50%]">
+        <h3 class="bg-red-500 font-bold">Suspended</h3>
+        <div class="dropArea h-96 bg-red-400" id="suspendedArea"></div>
+      </section>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>

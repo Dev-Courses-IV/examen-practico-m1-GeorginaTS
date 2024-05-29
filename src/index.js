@@ -17,16 +17,108 @@ const students = [
 
 
 
+
 const showStudents = () => {
   const studentsList = document.getElementById("studentsList")
-
+  const items = document.querySelectorAll("li")
+  for (item of items) {
+    item.remove()
+  }
+  let i = 0;
   for (student of students) {
+    i++
     const liStudent = document.createElement("li");
-    //liStudent.innerText = `${student.name} - ${student.age} -${student.email} `;
-    liStudent.innerHTML = `<article class="border border-lime-700 rounded-md bg-lime-300 p-2"><h4 class="font-bold"> ${student.name} <span class="text-white">${student.age}</span></h4><a href ="mailto: ${student.email}" class="bg-lime-200 text-center italic text-xs">${student.email}</a></article>`
+    liStudent.innerHTML = `<article id ="student${i}" draggable="true" class="border border-lime-700 rounded-md bg-lime-300 p-2"><h4 class="font-bold"> ${student.name} <span class="text-white">${student.age}</span></h4><a href ="mailto: ${student.email}" class="bg-lime-200 text-center italic text-xs">${student.email}</a></article>`
     studentsList.appendChild(liStudent)
+  }
+
+
+/* DRAG AND DROP
+*/
+
+const articles = document.querySelectorAll("article");
+
+articles.forEach((item) => {
+  item.addEventListener("dragstart", (event) => {
+    item.classList.add("bg-slate-200");
+    event.dataTransfer.setData("id", item.id);
+    console.log("dragstart:", item.id);
+  });
+  item.addEventListener("dragend", () => {
+    console.log("dragend:", item.id);
+    item.classList.remove("bg-slate-200");
+  });
+});
+
+
+const approvedArea = document.getElementById("approvedArea")
+approvedArea.addEventListener("dragover", (event) => {
+       event.preventDefault() 
+       console.log("Drag Over approvedArea")
+})
+approvedArea.addEventListener("drop" , (event) => {
+  
+  const idItem = event.dataTransfer.getData("id");
+  const item = document.getElementById(idItem)
+  item.classList.add("bg-white")
+  console.log("Drop approvedArea", item)
+  approvedArea.appendChild(item)
+
+})
+
+const suspendedArea = document.getElementById("suspendedArea")
+suspendedArea.addEventListener("dragover", (event) => {
+       event.preventDefault() 
+       console.log("Drag Over suspendedArea")
+})
+suspendedArea.addEventListener("drop" , (event) => {
+  
+  const idItem = event.dataTransfer.getData("id");
+  const item = document.getElementById(idItem)
+  item.classList.add("bg-white")
+  console.log("Drop approvedArea", item)
+  suspendedArea.appendChild(item)
+
+})
+
+// dropAreas.forEach(area => {
+//     console.log("dropArea", e )
+//     area.addEventListener("dragover", (event) => {
+//        event.preventDefault() 
+//        console.log("Drag Over")
+//        section.classList.add("bg-lime-400")
+//     });
+
+//     // section.addEventListener("dragleave", () => {
+//     //   section.classList.remove("bg-lime-400")
+//     // })
+
+//     // section.addEventListener("drop", (event) => {
+//     //   const idItem = event.dataTransfer.getData("id");
+//     //   section.classList.remove("bg-slate-400")
+//     //   // console.log("Drop", section.id, "item: ", idItem);
+//     //   const item = document.getElementById(idItem)
+//     //   section.appendChild(item)
+//     // });
+//   });
+
+
+
+
+
+}
+
+const cleanStudents = () => {
+  const items = document.querySelectorAll("li")
+  for (item of items) {
+    item.remove()
   }
 }
 
 const printBtn = document.getElementById("printButton")
 printBtn.addEventListener("click", showStudents)
+
+const cleanBtn = document.getElementById("cleanButton")
+cleanBtn.addEventListener("click", cleanStudents)
+
+
