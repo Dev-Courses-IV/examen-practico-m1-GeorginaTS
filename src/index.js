@@ -68,6 +68,7 @@ const showStudents = () => {
   suspendedArea.addEventListener("drop", (event) => {
     const idItem = event.dataTransfer.getData("id");
     const item = document.getElementById(idItem);
+    item.classList.remove("bg-lime-100");
     item.classList.add("bg-red-200");
     suspendedArea.appendChild(item);
   });
